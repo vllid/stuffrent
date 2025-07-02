@@ -1,4 +1,4 @@
-package me.vlead.com.stuffrent
+package com.stuffrent
 
 fun main() {
     val name = readln()
