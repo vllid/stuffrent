@@ -1,0 +1,26 @@
+@startuml
+
+left to right direction
+
+actor Арендодатель as Lender
+actor Арендующий as Renter
+actor Пользователь as User
+
+Lender --|> User
+Renter --|> User
+
+usecase "Выставить вещь для аренды" as makeStuffAvailableToRent
+usecase "Дать оценку или комментарий другому пользователю" as rateOrCommentUser
+usecase "Дать оценку или комментарий вещи, которую арендовал" as rateOrCommentStuff
+usecase "Арендовать вещь" as rentStuff
+usecase "Подтвердить выдачу вещи" as agreeForGive
+usecase "Подтвердить получение вещи" as agreeForGet
+
+User -- makeStuffAvailableToRent
+User -- rateOrCommentUser
+User -- rateOrCommentStuff
+Renter -- rentStuff
+Lender -- agreeForGive
+Renter -- agreeForGet
+
+@enduml
